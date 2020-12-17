@@ -28,12 +28,5 @@ namespace ModManager {
             top.Add(window);
             Application.Run();
         }
-
-        internal static object getCurrentPack(ListView view) {
-            if (view.Source.ToList().Count != 0)
-                return view.Source.ToList()[view.SelectedItem];
-            else return null;
-
-        }
     }
 }
