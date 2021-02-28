@@ -35,8 +35,8 @@ namespace ModManager.API {
         }
 
         public void LoadModpack(Modpack modpack) {
-            ZipUtils.RecursiveDelete($"{McPath}/mods");
-            ZipUtils.RecursiveDelete($"{McPath}/config");
+            ZipUtils.AssertCleanFolder($"{McPath}/mods");
+            ZipUtils.AssertCleanFolder($"{McPath}/config");
             ZipUtils.UnzipIntoDir(modpack.resource.Path, McPath);
         }
     }
