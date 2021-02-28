@@ -104,5 +104,17 @@ namespace ModManager.API {
 
             folder.Delete();
         }
+
+        public static void AssertCleanFolder(string folderDir) {
+            DirectoryInfo folder = new(folderDir);
+
+            if (!folder.Exists) {
+                folder.Create();
+                return;
+            }
+
+            RecursiveDelete(folderDir);
+            folder.Create();
+        }
     }
 }
